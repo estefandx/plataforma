@@ -22,14 +22,14 @@ class CrearTablaMensaje extends Migration
           $table->text("mensaje");
           $table->char("estado", 1);
 
-          /*$table->foreign("usuario_origen")
+          $table->foreign("usuario_origen")
                 ->references("usuario_id")
-                ->on("Usuarios")
-                ->onDelete("cascade"); */
-          /*$table->foreign("usuario_destino")
+                ->on("Usuario")
+                ->onDelete("cascade");
+          $table->foreign("usuario_destino")
                 ->references("usuario_id")
-                ->on("Usuarios")
-                ->onDelete("cascade"); */
+                ->on("Usuario")
+                ->onDelete("cascade");
 
         });
     }

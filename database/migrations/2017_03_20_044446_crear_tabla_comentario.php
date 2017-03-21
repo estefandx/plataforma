@@ -21,10 +21,10 @@ class CrearTablaComentario extends Migration
           $table->integer("producto_id")->unsigned();
           $table->timestamp("fecha");
 
-          /*$table->foreign("usuario_id")
+          $table->foreign("usuario_id")
                 ->references("usuario_id")
-                ->on("Usuarios")
-                ->onDelete("cascade"); */
+                ->on("Usuario")
+                ->onDelete("cascade");
 
           $table->foreign("producto_id")
                 ->references("producto_id")
