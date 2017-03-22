@@ -39,10 +39,6 @@ return 'para editar usuarios usuarios';
 
 
 
-
-
-
-
 /*------------------   rutas para el manejo de mensajes    ------------------------------*/
 
 //ruta para obtener los mensajes de un usuario 
