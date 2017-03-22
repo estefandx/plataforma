@@ -22,13 +22,13 @@ class CrearTablaUsuario extends Migration
            $table->string("email")->unique();
            $table->string('password');
            $table->string("telefono", 45);
-           //$table->integer("ciudad_id")->unsigned()->nullable();
-           //$table->integer("perfil_id")->unsigned()->nullable();
+           $table->integer("ciudad_id")->unsigned()->nullable();
+           $table->integer("perfil_id")->unsigned()->nullable();
            $table->rememberToken();
            $table->timestamps();
 
-           //$table->foreign("ciudad_id")->references('ciudad_id')->on('Ciudad');
-           //$table->foreign("perfil_id")->references('perfil_id')->on('Perfil');
+           $table->foreign("ciudad_id")->references('ciudad_id')->on('Ciudad');
+           $table->foreign("perfil_id")->references('perfil_id')->on('Perfil');
          });
 
      }

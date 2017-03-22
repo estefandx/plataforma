@@ -22,7 +22,7 @@ class CrearTablaProducto extends Migration
            $table->decimal("precio", 15, 2);
            $table->timestamps();
 
-           //$table->foreign('usuario_id')->references('usuario_id')->on('users');
+           $table->foreign('usuario_id')->references('usuario_id')->on('Usuario');
          });
 
      }
