@@ -21,4 +21,59 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
+    
 });
+    /*crear usuarios*/
+    $factory->define(App\Usuario::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'nombre' => $faker->name,
+        'apellido' => $faker->lastName  ,
+        'email' => $faker->unique()->safeEmail,
+        'telefono' => $faker->PhoneNumber,
+        'ciudad_id' => '1',
+        'perfil_id' => '1',
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+        'created_at' => date('Y-m-d H:m:s'),
+        'updated_at' => date('Y-m-d H:m:s'),
+    ];
+
+
+
+});
+
+
+        /*crear productos*/
+    $factory->define(App\Product::class, function (Faker\Generator $faker) {
+    
+    
+    return [
+        'usuario_id' => $faker->numberBetween($min = 103, $max = 152),
+        'titulo' => $faker->text($maxNbChars = 50),
+        'descripcion' => $faker->text($maxNbChars = 150),
+        'precio' => $faker->randomNumber(8),
+        'created_at' => date('Y-m-d H:m:s'),
+        'updated_at' => date('Y-m-d H:m:s'),
+    ];
+
+
+
+});
+
+
+    /*crear fotos a los productos*/
+    $factory->define(App\Photo::class, function (Faker\Generator $faker) {
+    
+    
+    return [
+        'producto_id' => $faker->numberBetween($min = 2, $max = 120),
+        'nombre' => $faker->name,
+        'url' => $faker->imageUrl('640', '480'),
+    
+    ];
+
+
+
+});    

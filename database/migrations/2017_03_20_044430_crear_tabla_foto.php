@@ -17,7 +17,8 @@ class CrearTablaFoto extends Migration
         Schema::create("Foto", function(Blueprint $table){
           $table->increments("foto_id");
           $table->integer("producto_id")->unsigned();
-          $table->binary("foto");
+          $table->string("nombre");
+          $table->string("url");
 
           $table->foreign("producto_id")->references("producto_id")
                 ->on("Producto")->onDelete("cascade");
