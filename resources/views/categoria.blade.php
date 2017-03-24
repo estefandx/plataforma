@@ -60,9 +60,9 @@
         
          <h1>contenido</h1>
          
-         <?php
-         foreach ($usuarios as $usuario) {
-            DD($usuario->apellido);
+            <?php
+         foreach ($categorias as $categoria) {
+            echo '<h2>'. $categoria->nombre.'</h2>';
          }
            
          ?>

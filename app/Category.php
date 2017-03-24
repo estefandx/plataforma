@@ -8,6 +8,8 @@ class Category extends Model
 {
     protected $table = 'Categoria';
     protected $primaryKey = "categoria_id";
+    public     $timestamps = false;
+
 
 
       /*para obtener la categoria padre de una subcategoria*/
@@ -24,7 +26,7 @@ class Category extends Model
 
     /*para obtener los productos de la categoria*/
     public function Producto(){
-            return $this->belongsToMany(Category::class,'Categoria_Producto')
-            ->withPivot('producto_id');
+            return $this->belongsToMany(Category::class,'Categoria_Producto','producto_id','categoria_id');
+            //->withPivot('producto_id');
    }
 }
