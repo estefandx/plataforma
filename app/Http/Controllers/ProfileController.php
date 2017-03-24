@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -13,7 +14,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+         $perfil = Profile::find(1);
+         $usuarios = $perfil->Usuarios;
+         return view('perfil',compact('usuarios'));
     }
 
     /**

@@ -17,7 +17,7 @@ class Usuario extends Authenticatable
      */
      // Se deben llenar estos tambien "ciudad_id", "perfil_id"
     protected $fillable = [
-        "nombre", "apellido", "email",
+        "nombre", "apellido", "email","perfil_id",
         "password", "telefono",
     ];
 
@@ -27,6 +27,12 @@ class Usuario extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',"ciudad_id", "perfil_id",
+        'password', 'remember_token',"ciudad_id",
     ];
+
+
+    public function Perfil()
+    {
+        return  $this->belongsTo(Profile::class);
+    }
 }
