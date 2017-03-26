@@ -8,6 +8,7 @@ class Profile extends Model
 {
     protected $table = 'Perfil';
     protected $primaryKey = "perfil_id";
+    public     $timestamps = false;
 
     /*para saber los usuarios de un tipo de perfil*/
     public function Usuarios()

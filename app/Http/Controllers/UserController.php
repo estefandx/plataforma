@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Usuario;
+use Illuminate\Contracts\Routing\ResponseFactory;
 
 class UserController extends Controller
 {
@@ -15,7 +17,10 @@ class UserController extends Controller
     public function index()
     {
       $usuarios = Usuario::paginate(5);
-      return view('usuario',compact('usuarios'));
+      //return view('usuario',compact('usuarios'));
+      return response()->json([
+      'usuarios' =>$usuarios
+]);
     }
 
     /**
