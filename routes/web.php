@@ -19,6 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::group(['middleware' => 'cors'], function (){
+
+    Route::post('authlogin','ApiAuthController@UserAuth');
+
+});
+
 //rutas restfull
 
 //rutas para la tabla usuarios
