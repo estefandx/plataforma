@@ -38,13 +38,13 @@ Route::resource('profile', 'ProfileController');
 
 
 
-// rutas especifica que involucran varias tablas 
+// rutas especifica que involucran varias tablas
 
 Route::get('/productos/user/{id}',function($user){
 
 return 'productos del usuario '.$user;
 
-}); 
+});
 
 //ruta para obtener productos  por categoria  (tambien aplica para subcategoria al estar en la misma tabla)
 Route::get('/productos/categoria/{id}',function($categoria){
@@ -58,15 +58,18 @@ Route::get('/productos/departamento/{id}',function($departamento){
 //para poder probar la ruta se necesita un formulario
 return 'productos por departamento  '.$departamento;
 
-}); 
+});
 
 //ruta para obtener productos por Ciudad
 Route::get('/productos/ciudad/{id}',function($ciudad){
 //para poder probar la ruta se necesita un formulario
 return 'productos por departamento  '.$ciudad;
 
-});   
+});
 
 
-
-
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
