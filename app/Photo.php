@@ -10,6 +10,10 @@ class Photo extends Model
     protected $primaryKey = "foto_id";
     public     $timestamps = false;
 
+    protected $fillable = [
+        'producto_id','url', 'nombre',
+    ];
+
     /*para saber el producto al que pertenece la foto*/
      public function Producto()
     {
