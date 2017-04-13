@@ -9,7 +9,6 @@ use Tymon\JWTAuthExceptions\JWTException;
 
 class AuthenticateController extends Controller
 {
-
     public function index()
     {
         // TODO: show users
